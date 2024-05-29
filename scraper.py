@@ -47,7 +47,7 @@ while line:
             num = num + 1
         line = net_link_file.readline().strip('\n')
         count = count + 1
-    sleep(10)
+    sleep(15)
 
     count1 = 0
     while ( count1 < num):
