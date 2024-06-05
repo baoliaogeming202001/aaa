@@ -24,9 +24,9 @@ options = [
 for option in options:
     chrome_options.add_argument(option)
 
-sleep_time = 10
+sleep_time = 20
 driver_list = []
-driver_numb = 8
+driver_numb = 10
 count = 0
 while ( count < driver_numb):
     driver_list.append( webdriver.Chrome(service=chrome_service, options=chrome_options) )
