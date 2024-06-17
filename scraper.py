@@ -3,13 +3,18 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 import time
 
-chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+# driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
+#chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+#driver = webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))
+#         chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
 chrome_options = Options()
 options = [
@@ -29,7 +34,8 @@ driver_list = []
 driver_numb = 10
 count = 0
 while ( count < driver_numb):
-    driver_list.append( webdriver.Chrome(service=chrome_service, options=chrome_options) )
+    #driver_list.append( webdriver.Chrome(service=chrome_service, options=chrome_options) )
+    driver_list.append( webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())), options=chrome_options) )
     count = count + 1
 
 net_link_file = open("link.txt")
