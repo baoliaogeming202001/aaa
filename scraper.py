@@ -14,7 +14,7 @@ chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).in
 chrome_options = Options()
 options = [
     "--headless",
-    "--disable-gpu",
+ #   "--disable-gpu",
     "--window-size=1920,1200",
     "--ignore-certificate-errors",
     "--disable-extensions",
@@ -29,8 +29,7 @@ driver_list = []
 driver_numb = 10
 count = 0
 while ( count < driver_numb):
-    #driver_list.append( webdriver.Chrome(service=chrome_service, options=chrome_options) )
-    driver_list.append( webdriver.Chrome(service=chrome_service) )
+    driver_list.append( webdriver.Chrome(service=chrome_service, options=chrome_options) )
     count = count + 1
 
 net_link_file = open("link.txt")
