@@ -34,8 +34,8 @@ driver_list = []
 driver_numb = 10
 count = 0
 while ( count < driver_numb):
-    #driver_list.append( webdriver.Chrome(service=chrome_service, options=chrome_options) )
-    driver_list.append( webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())), options=chrome_options) )
+   #driver_list.append( webdriver.Chrome(service=chrome_service, options=chrome_options) )
+    driver_list.append( webdriver.Chrome(service=ChromiumService(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()) , options=chrome_options ) )
     count = count + 1
 
 net_link_file = open("link.txt")
